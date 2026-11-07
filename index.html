@@ -1,8 +1,395 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Audrey H. Key</title></head>
-  <body style="background:#121614;color:#f0f4f1;font-family:serif;padding:2rem;">
-    <h1>Audrey H. Key</h1>
-    <p>Site under construction.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audrey H. Key | Artificial Intelligence & Data</title>
+  
+  <!-- Academic Serif & Technical Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Eczar:wght@400;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-forest-deep: #0f1411;
+      --bg-surface: #161e19;
+      --bg-surface-elevated: #1e2922;
+      --border-subtle: #2b3a31;
+      --border-accent: #3d5445;
+      --text-ivory: #e8ede9;
+      --text-muted: #95a59a;
+      --accent-moss: #5d7e68;
+      --accent-pine: #7da58a;
+      --accent-glow: rgba(93, 126, 104, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-forest-deep);
+      color: var(--text-ivory);
+      font-family: 'Eczar', serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+      padding: 4rem 1.5rem;
+    }
+
+    /* Masthead & Profile */
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 3rem;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-accent);
+      background-color: var(--bg-surface-elevated);
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-title h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-ivory);
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-title .tagline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--accent-pine);
+      letter-spacing: 0.02em;
+    }
+
+    .links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--text-ivory);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1.1rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn:hover {
+      background-color: var(--bg-surface-elevated);
+      border-color: var(--accent-moss);
+      color: var(--accent-pine);
+    }
+
+    .btn-primary {
+      background-color: var(--bg-surface-elevated);
+      border-color: var(--accent-moss);
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 3.5rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-pine);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    h2::after {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    p {
+      color: var(--text-ivory);
+      margin-bottom: 1.2rem;
+    }
+
+    p.lead {
+      color: var(--text-muted);
+      font-size: 1.18rem;
+    }
+
+    /* Project Cards */
+    .cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 1.5rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--accent-moss);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-ivory);
+    }
+
+    .card-tags {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Academic Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--border-subtle);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-moss);
+    }
+
+    .timeline-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-ivory);
+    }
+
+    .timeline-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--accent-pine);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .profile-photo {
+        width: 85px;
+        height: 85px;
+      }
+      .hero-title h1 {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Masthead -->
+    <header>
+      <div class="hero-top">
+        <!-- Replace src with your image file name in GitHub, e.g., profile.jpg -->
+        <img class="profile-photo" src="profile.jpg" alt="Audrey H. Key" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'110\' height=\'110\' viewBox=\'0 0 110 110\'><rect width=\'110\' height=\'110\' fill=\'%231e2922\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%237da58a\' font-family=\'Cinzel\' font-size=\'32\'>AK</text></svg>'">
+        
+        <div class="hero-title">
+          <h1>Audrey H. Key</h1>
+          <div class="tagline">Graduate Student in Artificial Intelligence & Machine Learning</div>
+        </div>
+      </div>
+
+      <div class="links-bar">
+        <a href="resume.pdf" class="btn btn-primary" target="_blank">Download CV (PDF)</a>
+        <a href="https://github.com/BookWyrm88" class="btn" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com" class="btn" target="_blank">LinkedIn</a>
+        <a href="mailto:Audrey.h.key@gmail.com" class="btn">Email</a>
+      </div>
+    </header>
+
+    <!-- Narrative Section -->
+    <section>
+      <h2>Background & Inquiries</h2>
+      <p class="lead">
+        Approaching artificial intelligence through the complementary lenses of formal logic, empirical protocol, and computational rigor.
+      </p>
+      <p>
+        My academic background began with an inquiry into biological sciences and philosophy, centering on epistemological frameworks and formal logic. With professional roots in clinical data collection, quality assurance, and laboratory operations, I examine computational systems with a deliberate emphasis on reproducibility, validation, and structural soundness.
+      </p>
+      <p>
+        Currently preparing for graduate study in machine learning, I design focused, single-purpose software utilities while investigating the intersection of clinical methodology, structured data, and emerging AI architectures.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <h2>Applied Implementations</h2>
+      <div class="cards-grid">
+        
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Interactive Routine & Workflow Engine</span>
+            <span class="card-tags">JavaScript / CSS / Structured State</span>
+          </div>
+          <p>
+            A single-page operational productivity utility built to translate freeform scratchpad inputs into structured, time-blocked execution schedules without reliance on bloated backend dependencies.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Clinical Protocol & Reconstitution Calculator</span>
+            <span class="card-tags">HTML / Tailwind CSS / Vanilla JS</span>
+          </div>
+          <p>
+            A responsive measurement and calculation tool designed for laboratory and compounding calculations, supporting accurate concentration scaling, precise dilution management, and protocol tracking.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Graduate AI / ML Research Lab</span>
+            <span class="card-tags">Python / R / PyTorch / SQL</span>
+          </div>
+          <p>
+            An open repository housing coursework implementations, algorithm evaluations, statistical modeling, and data validation notebooks developed throughout graduate studies.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section>
+      <h2>Academic Foundation</h2>
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-title">Master of Science in Artificial Intelligence & Machine Learning</div>
+          <div class="timeline-meta">Colorado State University Global | Candidate</div>
+          <div class="timeline-desc">
+            Focused on advanced statistical learning, algorithm development, computational modeling, and model evaluation protocols.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-title">Bachelor of Arts in Philosophy</div>
+          <div class="timeline-meta">Undergraduate Foundation</div>
+          <div class="timeline-desc">
+            Primary emphasis on formal symbolic logic, epistemology, and foundational biological sciences coursework.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-title">Clinical & Technical Registrations</div>
+          <div class="timeline-meta">State Trainee / PTCB Track | Laboratory Operations</div>
+          <div class="timeline-desc">
+            Active preparation for Pharmacy Technician Certification (PTCE) alongside operational experience across laboratory QA/QC and clinical behavioral observation protocols.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      &copy; Audrey H. Key &middot; Tomball, Texas &middot; Built with semantic HTML &amp; CSS
+    </footer>
+
+  </div>
+
+</body>
 </html>
