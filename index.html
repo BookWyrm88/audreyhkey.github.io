@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Audrey H. Key | Artificial Intelligence & Machine Learning</title>
 
-  <!-- Antique Key & Truth Tree Favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230f1612' stroke='%2388af94' stroke-width='2'/%3E%3Cpath d='M32 8 L24 16 M32 8 L40 16 M24 16 L20 22 M24 16 L28 22 M40 16 L36 22 M40 16 L44 22' stroke='%2388af94' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='29' r='6' fill='none' stroke='%23edf2ee' stroke-width='2'/%3E%3Cline x1='32' y1='35' x2='32' y2='54' stroke='%23edf2ee' stroke-width='2'/%3E%3Cpath d='M32 44 H38 M32 50 H40 V54 H32' stroke='%23edf2ee' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E">
+  <!-- Complete Favicon & Device Icon Suite -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0c100e">
 
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +59,7 @@
       padding: 3rem 1.5rem 5rem;
     }
 
-    /* Moody Evergreen Forest Header Banner */
+    /* Moody Evergreen Forest Banner */
     .forest-banner {
       width: 100%;
       height: 220px;
@@ -82,9 +87,16 @@
     .hero-top {
       display: flex;
       align-items: flex-end;
-      gap: 1.75rem;
+      justify-content: space-between;
+      gap: 1.5rem;
       margin-top: -60px;
       margin-bottom: 1.75rem;
+    }
+
+    .identity-cluster {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.5rem;
     }
 
     .profile-photo {
@@ -96,6 +108,28 @@
       background-color: #19241c;
       flex-shrink: 0;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 0 5px rgba(136, 175, 148, 0.12);
+    }
+
+    /* Large Header Emblem Display */
+    .header-logo-badge {
+      width: 78px;
+      height: 78px;
+      border-radius: 12px;
+      background: rgba(12, 16, 14, 0.85);
+      border: 1px solid var(--border-accent);
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      flex-shrink: 0;
+    }
+
+    .header-logo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
     }
 
     .hero-title h1 {
@@ -119,7 +153,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
-      padding-top: 0.5rem;
+      padding-top: 0.75rem;
       border-top: 1px solid rgba(136, 175, 148, 0.1);
     }
 
@@ -312,6 +346,11 @@
         width: 95px;
         height: 95px;
       }
+      .header-logo-badge {
+        width: 55px;
+        height: 55px;
+        align-self: flex-start;
+      }
       .hero-title h1 {
         font-size: 1.8rem;
       }
@@ -331,18 +370,26 @@
     <!-- Masthead -->
     <header>
       <div class="hero-top">
-        <img class="profile-photo" src="profile.jpg" alt="Audrey H. Key" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'125\' height=\'125\' viewBox=\'0 0 125 125\'><rect width=\'125\' height=\'125\' fill=\'%2319241c\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2388af94\' font-family=\'Cinzel\' font-size=\'34\'>AK</text></svg>'">
-        
-        <div class="hero-title">
-          <h1>Audrey H. Key</h1>
-          <div class="tagline">Graduate Student in Artificial Intelligence & Machine Learning</div>
+        <div class="identity-cluster">
+          <!-- Profile photo slot -->
+          <img class="profile-photo" src="profile.jpg" alt="Audrey H. Key" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'125\' height=\'125\' viewBox=\'0 0 125 125\'><rect width=\'125\' height=\'125\' fill=\'%2319241c\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2388af94\' font-family=\'Cinzel\' font-size=\'34\'>AK</text></svg>'">
+          
+          <div class="hero-title">
+            <h1>Audrey H. Key</h1>
+            <div class="tagline">Graduate Student in Artificial Intelligence & Machine Learning</div>
+          </div>
+        </div>
+
+        <!-- Prominent Brand Emblem in Header -->
+        <div class="header-logo-badge" title="Audrey H. Key Emblem">
+          <img src="logo-mid.svg" alt="Audrey H. Key Logo" onerror="this.src='android-chrome-192x192.png'">
         </div>
       </div>
 
       <div class="links-bar">
         <a href="resume.pdf" class="btn btn-primary" target="_blank">Download CV (PDF)</a>
         <a href="https://github.com/BookWyrm88" class="btn" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/audrey-key-texas" class="btn" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com" class="btn" target="_blank">LinkedIn</a>
         <a href="mailto:Audrey.h.key@gmail.com" class="btn">Email</a>
       </div>
     </header>
@@ -439,6 +486,3 @@
 
 </body>
 </html>
-    .hero-top {
-      display: flex;
-      align-items: flex-end
