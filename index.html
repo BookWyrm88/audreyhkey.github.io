@@ -59,50 +59,23 @@
       padding: 3rem 1.5rem 5rem;
     }
 
-    /* Custom Truth-Tree Key Atmospheric Banner */
+    /* Seamless Pre-composed Banner */
     .forest-banner {
       width: 100%;
-      height: 240px;
+      height: 220px;
       border-radius: 10px 10px 0 0;
       border: 1px solid var(--border-pine);
       border-bottom: none;
-      position: relative;
       overflow: hidden;
-      background: 
-        radial-gradient(circle at 70% 50%, rgba(35, 56, 42, 0.45) 0%, transparent 65%),
-        linear-gradient(180deg, rgba(12, 16, 14, 0.25) 0%, rgba(12, 16, 14, 0.92) 100%),
-        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background-color: #0c100e;
     }
 
-    /* Layered Mist & Vignette */
-    .forest-banner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(12, 16, 14, 0.9) 0%, rgba(12, 16, 14, 0.15) 50%, rgba(12, 16, 14, 0.9) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Embedded Truth-Tree Key Artwork */
-    .banner-key-art {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .forest-banner img {
       width: 100%;
       height: 100%;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .banner-key-art svg {
-      width: 90%;
-      height: 85%;
-      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9));
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     /* Masthead Card */
@@ -143,7 +116,6 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 0 5px rgba(136, 175, 148, 0.12);
     }
 
-    /* Header Emblem Badge */
     .header-logo-badge {
       width: 78px;
       height: 78px;
@@ -217,7 +189,6 @@
       border-color: var(--accent-moss);
     }
 
-    /* Sections */
     section {
       margin-bottom: 3.5rem;
     }
@@ -256,7 +227,6 @@
       margin-bottom: 1.35rem;
     }
 
-    /* Cards */
     .cards-grid {
       display: flex;
       flex-direction: column;
@@ -310,7 +280,6 @@
       margin-bottom: 0;
     }
 
-    /* Timeline */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -367,7 +336,7 @@
 
     @media (max-width: 650px) {
       .forest-banner {
-        height: 160px;
+        height: 150px;
       }
       .hero-top {
         flex-direction: column;
@@ -397,33 +366,15 @@
 
   <div class="container">
     
-    <!-- Realistic Truth-Tree Key Canopy Banner -->
+    <!-- Pre-composed Truth-Tree Key Banner -->
     <div class="forest-banner">
-      <div class="banner-key-art">
-        <svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Fine coordinate baseline -->
-          <line x1="80" y1="120" x2="920" y2="120" stroke="#3e5a46" stroke-width="1" stroke-dasharray="8 12" opacity="0.35"/>
-          
-          <!-- Key placement across misty canopy -->
-          <g transform="translate(110, 15) scale(0.72)">
-            <!-- Ambient green backglow around the bow -->
-            <circle cx="210" cy="115" r="140" fill="radial-gradient(circle, rgba(136, 175, 148, 0.22) 0%, transparent 70%)"/>
-            
-            <!-- Truth-Tree Key Artwork with transparent background integration -->
-            <image href="https://i.ibb.co/3s6QJkL/truth-key-transparent.png" 
-                   x="0" y="0" width="1050" height="340" 
-                   style="filter: contrast(1.08) brightness(0.92) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9));"
-                   onerror="this.onerror=null; this.src='Gemini_Generated_Image_kenxyekenxyekenx.jpg'; this.style.mixBlendMode='screen'; this.style.filter='hue-rotate(60deg) contrast(1.15) brightness(0.85)';" />
-          </g>
-        </svg>
-      </div>
+      <img src="banner.jpg" alt="Audrey H. Key - Truth Tree Key Banner">
     </div>
 
     <!-- Masthead -->
     <header>
       <div class="hero-top">
         <div class="identity-cluster">
-          <!-- Profile photo slot -->
           <img class="profile-photo" src="profile.jpg" alt="Audrey H. Key" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'125\' height=\'125\' viewBox=\'0 0 125 125\'><rect width=\'125\' height=\'125\' fill=\'%2319241c\'/><text x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2388af94\' font-family=\'Cinzel\' font-size=\'34\'>AK</text></svg>'">
           
           <div class="hero-title">
@@ -432,7 +383,6 @@
           </div>
         </div>
 
-        <!-- Prominent Brand Emblem in Header -->
         <div class="header-logo-badge" title="Audrey H. Key Emblem">
           <img src="logo-mid.svg" alt="Audrey H. Key Logo" onerror="this.src='android-chrome-192x192.png'">
         </div>
@@ -441,7 +391,7 @@
       <div class="links-bar">
         <a href="resume.pdf" class="btn btn-primary" target="_blank">Download CV (PDF)</a>
         <a href="https://github.com/BookWyrm88" class="btn" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com" class="btn" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/audrey-key-texas" class="btn" target="_blank">LinkedIn</a>
         <a href="mailto:Audrey.h.key@gmail.com" class="btn">Email</a>
       </div>
     </header>
