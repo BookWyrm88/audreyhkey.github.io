@@ -59,17 +59,50 @@
       padding: 3rem 1.5rem 5rem;
     }
 
-    /* Moody Evergreen Forest Banner */
+    /* Custom Truth-Tree Key Atmospheric Banner */
     .forest-banner {
       width: 100%;
-      height: 220px;
+      height: 240px;
       border-radius: 10px 10px 0 0;
       border: 1px solid var(--border-pine);
       border-bottom: none;
-      background: 
-        linear-gradient(180deg, rgba(12, 16, 14, 0.15) 0%, rgba(12, 16, 14, 0.85) 100%),
-        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       position: relative;
+      overflow: hidden;
+      background: 
+        radial-gradient(circle at 70% 50%, rgba(35, 56, 42, 0.45) 0%, transparent 65%),
+        linear-gradient(180deg, rgba(12, 16, 14, 0.25) 0%, rgba(12, 16, 14, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+
+    /* Layered Mist & Vignette */
+    .forest-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(12, 16, 14, 0.9) 0%, rgba(12, 16, 14, 0.15) 50%, rgba(12, 16, 14, 0.9) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Embedded Truth-Tree Key Artwork */
+    .banner-key-art {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .banner-key-art svg {
+      width: 90%;
+      height: 85%;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.9));
     }
 
     /* Masthead Card */
@@ -110,7 +143,7 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 0 5px rgba(136, 175, 148, 0.12);
     }
 
-    /* Large Header Emblem Display */
+    /* Header Emblem Badge */
     .header-logo-badge {
       width: 78px;
       height: 78px;
@@ -334,7 +367,7 @@
 
     @media (max-width: 650px) {
       .forest-banner {
-        height: 140px;
+        height: 160px;
       }
       .hero-top {
         flex-direction: column;
@@ -364,8 +397,27 @@
 
   <div class="container">
     
-    <!-- Rainy Forest Landscape Banner -->
-    <div class="forest-banner"></div>
+    <!-- Realistic Truth-Tree Key Canopy Banner -->
+    <div class="forest-banner">
+      <div class="banner-key-art">
+        <svg viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fine coordinate baseline -->
+          <line x1="80" y1="120" x2="920" y2="120" stroke="#3e5a46" stroke-width="1" stroke-dasharray="8 12" opacity="0.35"/>
+          
+          <!-- Key placement across misty canopy -->
+          <g transform="translate(110, 15) scale(0.72)">
+            <!-- Ambient green backglow around the bow -->
+            <circle cx="210" cy="115" r="140" fill="radial-gradient(circle, rgba(136, 175, 148, 0.22) 0%, transparent 70%)"/>
+            
+            <!-- Truth-Tree Key Artwork with transparent background integration -->
+            <image href="https://i.ibb.co/3s6QJkL/truth-key-transparent.png" 
+                   x="0" y="0" width="1050" height="340" 
+                   style="filter: contrast(1.08) brightness(0.92) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9));"
+                   onerror="this.onerror=null; this.src='Gemini_Generated_Image_kenxyekenxyekenx.jpg'; this.style.mixBlendMode='screen'; this.style.filter='hue-rotate(60deg) contrast(1.15) brightness(0.85)';" />
+          </g>
+        </svg>
+      </div>
+    </div>
 
     <!-- Masthead -->
     <header>
